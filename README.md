@@ -1,8 +1,8 @@
 ### About
 
-Converting openly accessible address locations  into geographical coordinates (longitude and latitude). Primary the work done with means of OSM. For further details regarding features refer to ```pygeoconverter.py``` script.
+Converting openly accessible address locations  into geographical coordinates (longitude and latitude). Primary the work done with means of OSM. For further details regarding features refer to ```pygeoconverter.py``` script. I was able to download around 55 000 coordinates in 3 days (each day script worked not more then 5-6 hours and was also continuously improved).
 
-**NOTE** Script should skip already downloaded locations. But be careful - interrupting script while it's work may remove already downloaded data. Because of this reason backup in form of 'tar' file is always created before launching retrieving process.
+**NOTE** Script should skip already downloaded locations. But be careful - interrupting script while working may remove already downloaded data (only from last "batch", which is also configurable). Because of this reason backup in form of 'tar' file is always created before launching retrieving process.
 
 ### Structure
 
