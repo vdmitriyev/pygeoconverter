@@ -2,3 +2,7 @@
 *.pyc
 *.gz
 README.html
+data/geodb.py
+data/geodb_skipped.py
+data/EEGAnlagenstammdaten.csv
+data/geodb.csv
