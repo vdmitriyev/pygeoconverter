@@ -23,7 +23,7 @@ pip install geocoder
 
 ### Usage
 
-In case there were no data downloaded before script will through exception first time. but on the second run should proceed successfully.
+In case there were no data downloaded before script will through exception first time. But on the second run should proceed successfully. For configurations use 'configs.py' file.
 
 ```
 python pygeoconverter.py
