@@ -1,9 +1,9 @@
 Anlagenschlüssel;Anschrift;PLZ;Ort;Bundesland;Energieträger;Inbetriebnahmedatum;Außerbetriebnahmedatum;Installierte Leistung (kW);Leistungsmessung vorhanden;Spannungsebene
-E11910100000000000000000247401825;Sachsenstr. 16;49456;Bakum;Niedersachsen;Solar;27.09.2010;;7,790;Nein;NS
-E20938010000000000001000902300001;Aseler Str #;26409;Wittmund;Niedersachsen;Windenergie;26.04.2001;;600,000;Ja;MS
-E20938010000000000001000902400001;Aseler Str #;26409;Wittmund;Niedersachsen;Windenergie;16.12.2003;;600,000;Ja;MS
-E21846010000000000001000006000001;Hellbuscher Weg 3;26197;Großenkneten;Niedersachsen;Solar;28.01.2014;;10,000;Nein;NS
-E21846010000000000001000006300001;Drielaker Heide 6;26135;Oldenburg;Niedersachsen;Solar;31.05.2012;;2,880;Nein;NS
-E21846010000000000001000020000001;Neissestr 1;21435;Stelle;Niedersachsen;Solar;28.03.2013;;4,410;Nein;NS
-E21846010000000000001000023900001;Goldaper Weg 3;26316;Varel;Niedersachsen;Solar;30.10.2013;;3,570;Nein;NS
-E21846010000000000001000045200001;Dalsper 23;26931;Elsfleth;Niedersachsen;Solar;29.09.2014;;5,130;Nein;NS
+E20438011832432432432000902300001;Sachsenstr. 16;49456;Bakum;Niedersachsen;Solar;27.09.2010;;7,790;Nein;NS
+E20938011832432432432000902300001;Aseler Str #;26409;Wittmund;Niedersachsen;Windenergie;26.04.2001;;600,000;Ja;MS
+E20938011832432432432000902400001;Aseler Str #;26409;Wittmund;Niedersachsen;Windenergie;16.12.2003;;600,000;Ja;MS
+E21846011832432432432000006000001;Hellbuscher Weg 3;26197;Großenkneten;Niedersachsen;Solar;28.01.2014;;10,000;Nein;NS
+E21846011832432432432000006300001;Drielaker Heide 6;26135;Oldenburg;Niedersachsen;Solar;31.05.2012;;2,880;Nein;NS
+E21846011832432432432000020000001;Neissestr 1;21435;Stelle;Niedersachsen;Solar;28.03.2013;;4,410;Nein;NS
+E21846011832432432432000023900001;Goldaper Weg 3;26316;Varel;Niedersachsen;Solar;30.10.2013;;3,570;Nein;NS
+E21846011832432432432000045200001;Dalsper 23;26931;Elsfleth;Niedersachsen;Solar;29.09.2014;;5,130;Nein;NS
