@@ -70,7 +70,7 @@ def run(from_file=False):
     #test_address ='Rosa-Luxemburg- 5,28876,Oyten,Niedersachsen'
     #test_address = 'Neuheede Siedlu 999;26892;Heede;Niedersachsen'.replace(';', ', ')
     test_address = 'Achtern Buschho #;27367;Ahausen;Niedersachsen'.replace(';', ', ').replace('#', '1')
-    print ('[i] following location will be checked:\n{0}'.format(test_address))
+    print('[i] following location will be checked:\n{0}'.format(test_address))
     print('method latitude longitude \n')
 
     #test_geopy(test_address)

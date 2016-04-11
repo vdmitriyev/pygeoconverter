@@ -8,24 +8,32 @@ Converting openly accessible address locations  into geographical coordinates (l
 
 * **data** - contains initial csv with addresses and resulting data (py dict + CSV)
 * **pygeoconverter** - main Python script + configuration file
-* **tests** - multiple test of other geo python libraries (e.g. Google Map)
+* **experiments** - multiple test of other geo python libraries (e.g. Google Map)
 
 ### Dependencies
 
-* Python 2.7
+* Python 3
 * geocoder
 
 ### Preparing
 
-```
-pip install geocoder
-```
+* Install dependencies
+	- [scripts/cmdInitiateEnv.bat]
+* Create folder `data` and file `SampleDataSource.csv`
+	```
+	mkdir data
+	cd data
+	touch SampleDataSource.csv
+	```	
 
 ### Usage
 
 In case there were no data downloaded before script will through exception first time. But on the second run should proceed successfully. For configurations use 'configs.py' file.
 
 ```
+cd script
+cmdStartEnv.bat
+cd pygeoconverter
 python pygeoconverter.py
 ```
 
