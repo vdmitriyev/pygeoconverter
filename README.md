@@ -8,7 +8,7 @@ Converting openly accessible address locations  into geographical coordinates (l
 
 * **data** - contains initial csv with addresses and resulting data (py dict + CSV)
 * **pygeoconverter** - main Python script + configuration file
-* **tests** - multiple test of other geo python libraries (e.g. Google Map)
+* **experiments** - multiple test of other geo python libraries (e.g. Google Map)
 
 ### Dependencies
 
