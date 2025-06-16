@@ -1,11 +1,11 @@
-__version__ = "1.0.0"
-__date__ = "11.03.2016"
+__version__ = "1.1.0"
 __description__ = "Converting locations from open access data to the longitude and latitude."
 
 import os
 import sys
 import tarfile
 import time
+import traceback
 import uuid
 from datetime import datetime
 from pprint import pprint
@@ -28,6 +28,10 @@ class GeoConverter:
             print('[i] class "GeoConverter" created')
         self.geo_database = {}
         self.unique_keys = {}
+        self.proxies = {}
+
+    def set_proxies(self, proxies: list):
+        self.proxies = proxies
 
     def prepeare_data(self):
         """Preparing data for work - loading and making backups"""
@@ -115,27 +119,57 @@ class GeoConverter:
 
         return True
 
-    def get_coordinates(self, address):
-        """Using geocoder to decode address
-        - can use various providers (Google, OSM, etc.) https://geocoder.readthedocs.org/
-        - can output GeoJSON
-        - proxies from http://www.proxy-listen.de/Proxy/Proxyliste.html
+    def get_coordinates(self, address: str):
+        """
+        Using geocoder to decode address
+            - can use various providers (Google, OSM, etc.) https://geocoder.readthedocs.org/
+            - can output GeoJSON
         """
 
-        # proxies = {'149.202.249.227:3128', '144.76.232.58:3128'}
-
-        # g_geocoder = geocoder.osm(address, proxies=proxies)
-        g_geocoder = geocoder.osm(address)
+        is_retrieved, g_geocoder = False, None
+        # try:
+        #     # if len(self.proxies) != 0:
+        #     #     g_geocoder = geocoder.osm(address, proxies=self.proxies)
+        #     g_geocoder = geocoder.osm(address)
+        #     if g_geocoder is not None and g_geocoder.latlng is not None:
+        #         if g_geocoder.latlng != []:
+        #             is_retrieved = True
+        # except:
+        #     is_retrieved = False
+        #     print(traceback.format_exc())
 
         # in case OSM didn't provide anything use Google Maps
-        if g_geocoder.latlng == []:
-            g_geocoder = geocoder.google(address)
+        try:
+            if not is_retrieved:
+                g_geocoder = geocoder.google(address)
+            if g_geocoder is not None and g_geocoder.latlng is not None:
+                if g_geocoder.latlng != []:
+                    is_retrieved = True
+        except:
+            is_retrieved = False
+            print(traceback.format_exc())
 
         # in case Google Maps didn't provide anything use ArcGIS
-        if g_geocoder.latlng == []:
-            g_geocoder = geocoder.arcgis(address)
+        try:
+            if not is_retrieved:
+                g_geocoder = geocoder.arcgis(address)
+            if g_geocoder is not None and g_geocoder.latlng is not None:
+                if g_geocoder.latlng != []:
+                    is_retrieved = True
+        except:
+            is_retrieved = False
+            print(traceback.format_exc())
 
-        (latitude, longitude) = g_geocoder.latlng
+        coordinates = []
+        if g_geocoder is not None:
+            coordinates = g_geocoder.latlng
+
+        latitude, longitude = None, None
+        if coordinates is not None and len(coordinates) == 2:
+            latitude, longitude = coordinates[0], coordinates[1]
+        else:
+            print("[ex] wrong coordinates format")
+
         if DEBUG:
             print("[i] location : {0} {1}".format(latitude, longitude))
 
@@ -165,6 +199,7 @@ class GeoConverter:
                     if DEBUG:
                         print("[x] following key skipped {0}".format(current_key))
                     print("[ex] Exception: {0}".format(ex))
+                    print(traceback.format_exc())
                     self.geo_database_skipped[current_key] = {"key": current_key}
 
                 if current_key not in self.geo_database_skipped:
