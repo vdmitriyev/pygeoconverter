@@ -1,14 +1,16 @@
 ## About
 
-Converting openly accessible address locations  into geographical coordinates (longitude and latitude). Primary the work done with means of OSM. For further details regarding features refer to ```pygeoconverter.py``` script. I was able to download around 55 000 coordinates in 3 days (each day script worked not more then 5-6 hours and was also continuously improved).
+A Python script that converts addresses into geographical coordinates (longitude and latitude). Primary work is done by package: [geocoder](https://github.com/DenisCarriere/geocoder). For further details regarding features refer to ```pygeoconverter.py``` script.
 
-**NOTE**: Script should skip already converted locations. But be careful - interrupting script while working may remove already converted data (only from last "batch", which is also configurable). Because of this reason backup in form of 'tar' file is always created before launching retrieving process.
+**Benchmark**: In a single threaded mode it was possible to convert around 55K addresses into coordinates in 3 days (the script worked not more then 5-6 hours daily).
+
+**NOTE**: Script should skip already converted locations. But be careful: interrupting script while working may remove already converted data (only from last "batch", which is also configurable). Thus, a `tar` file as a backup is created before a retrieve process launches.
 
 ## Structure
 
-* **data** - contains initial csv with addresses and resulting data (py dict + CSV)
-* **pygeoconverter** - main Python script + configuration file
-* **experiments** - multiple test of other geo python libraries (e.g. Google Map)
+* **data** - contains initial CSV with addresses and retrieved results in various formats (Python dictionary + CSV)
+* **pygeoconverter** - main Python script and configuration files
+* **tests** - multiple test of other geo python packages (e.g., `geopy`, `googlemaps`,)
 
 ## Dependencies
 
@@ -24,7 +26,7 @@ Converting openly accessible address locations  into geographical coordinates (l
 	mkdir data
 	cd data
 	touch SampleDataSource.csv
-	```	
+	```
 
 ## Usage
 
@@ -39,4 +41,4 @@ python pygeoconverter.py
 
 ## License
 
-[MIT]
+[LICENSE](LICENSE)

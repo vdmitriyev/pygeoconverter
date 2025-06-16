@@ -1,6 +1,9 @@
+# extensions
 *.log
 *.pyc
 *.gz
+
+# files
 README.html
 data/geodb.py
 data/geodb_skipped.py
